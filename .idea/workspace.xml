@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aefeae57-1db2-49d7-b62e-f5d59b552abf" name="Changes" comment="" />
+    <list default="true" id="aefeae57-1db2-49d7-b62e-f5d59b552abf" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/game.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,7 +55,7 @@
       <workItem from="1725270077271" duration="7069000" />
       <workItem from="1725358271688" duration="1990000" />
       <workItem from="1725361073050" duration="2211000" />
-      <workItem from="1725604003325" duration="2178000" />
+      <workItem from="1725604003325" duration="2489000" />
     </task>
     <servers />
   </component>

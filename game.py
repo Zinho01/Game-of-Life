@@ -1,7 +1,7 @@
 import os 
 
 def make_commit(days: int):
-    if days <10 :
+    if days <1 :
         return os.system('git push')
     else:
         dates = f'{days} days ago'
@@ -15,7 +15,7 @@ def make_commit(days: int):
         os.system(f'git commit --date="'+dates+'" -m "commit"')
         
 
-        return days * make_commit(days-10)
+        return days * make_commit(days-1)
     
 
-make_commit(10)
+make_commit(5)
