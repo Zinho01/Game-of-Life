@@ -10,7 +10,7 @@ def make_commit(days: int):
             file.write(f'{dates}\n')
 
         #Staging
-        os.system('git add game.txt')
+        os.system('git add data.txt')
         #Commit
         os.system(f'git commit --date="'+dates+'" -m "commit"')
         
@@ -18,4 +18,4 @@ def make_commit(days: int):
         return days * make_commit(days-1)
     
 
-make_commit(7)
+make_commit(5)
