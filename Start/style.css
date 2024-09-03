@@ -1,12 +1,14 @@
-body{
+body {
     background-color: rgb(3, 87, 41);
 }
+
 h1 {
     text-align: center;
     color: white;
     font-size: 50px;
     margin-top: 10px;
 }
+
 canvas {
     background-color: white;
     padding-left: 0;
@@ -14,22 +16,47 @@ canvas {
     margin-left: auto;
     margin-right: auto;
     display: block;
-    width:1400px;
-    height: 700px;
+    width: 800px;
+    height: 800px;
     border: 7px solid black;
+}
+
+#buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 button {
     display: block;
-    margin: 10px auto;
+    margin: 10px;
     padding: 10px 20px;
     font-size: 20px;
     background-color: rgb(3, 87, 41);
     color: white;
-    border: none;
+    border: solid;
+    border-color: black;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #0d8d14;
+#ClearButton {
+    background-color: red;
+}
+
+#RandomButton {
+    background-color: blue;
+}
+
+#StartButton {
+    background-color: green;
+}
+
+#PauseButton {
+    background-color: yellow;
+    color: black;
+}
+
+#RestartButton {
+    background-color: orange;
+    color: black;
 }
