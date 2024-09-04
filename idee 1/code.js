@@ -1,8 +1,7 @@
-const rows = 38;
-let cols = 100;
+const rows = 30;
+let cols = 30;
 
-let playing = false;  // Changed to let
-
+let playing = false; 
 let grid = new Array(rows);
 const nextGrid = new Array(rows);
 
@@ -174,7 +173,7 @@ function applyRules(row, col) {
     if (grid[row][col] == 1) {
         if (numNeighbors < 2) {
             nextGrid[row][col] = 0;
-        } else if (numNeighbors == 2 || numNeighbors == 3) {
+        } else if (numNeighbors == 2 || numNeighbors == 3 || numNeighbors == 6) {
             nextGrid[row][col] = 1;
         } else if (numNeighbors > 3) {
             nextGrid[row][col] = 0;
