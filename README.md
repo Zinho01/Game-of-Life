@@ -1,14 +1,53 @@
 # Game-of-Life
 
-## Introduction
+Conway's Game of Life is een simulatie van cellulaire automaten, uitgevonden door de wiskundige John Conway in 1970. Het is een nultispeler-spel waarin de evolutie van cellen wordt bepaald door hun omgeving volgens een paar eenvoudige regels. Dit project bevat een interactieve versie van het spel met de volgende functionaliteiten: Clear, Random, Start, Pause, en Restart.
 
-Conway's Game of Life is a cellular automaton devised by mathematician John Horton Conway in 1970. It is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input. The game is played on a two-dimensional grid of cells, each of which can be alive or dead. The state of the grid evolves in discrete steps according to a set of simple rules.
+## Inhoudsopgave
 
-## Rules
+1. [Installatie](#installatie)
+2. [Hoe te gebruiken](#hoe-te-gebruiken)
+3. [Functies](#functies)
+4. [Spelregels](#spelregels)
 
-1. **Any live cell with fewer than two live neighbors dies** (underpopulation).
-2. **Any live cell with two or three live neighbors lives on to the next generation** (survival).
-3. **Any live cell with more than three live neighbors dies** (overpopulation).
-4. **Any dead cell with exactly three live neighbors becomes a live cell** (reproduction).
+## Installatie
+
+1. Clone deze repository naar je lokale machine:
+    ```bash
+    git clone https://github.com/gebruikersnaam/conways-game-of-life.git
+    ```
+
+2. Navigeer naar de projectmap:
+    ```bash
+    cd conways-game-of-life
+    ```
+
+3. open de html via vscode live sever
+
+## Hoe te gebruiken
+
+Bij het starten van het programma verschijnt een raster op het scherm dat de spelwereld vertegenwoordigt. De cellen in het raster kunnen zich in twee toestanden bevinden: levend of dood.
+
+### Besturingselementen
+
+- **Clear**: Verwijdert alle levende cellen van het raster en reset het spel naar een lege staat.
+- **Random**: Vult het raster met een willekeurige configuratie van levende en dode cellen.
+- **Start**: Start de simulatie, waardoor de cellen beginnen te evolueren volgens de spelregels.
+- **Pause**: Pauzeert de simulatie, waardoor de huidige staat van het spel bewaard blijft.
+- **Restart**: Herstart het spel met de laatst opgeslagen configuratie.
+
+## Functies
+
+- **Interactief raster**: Klik op individuele cellen om hun toestand (levend/dood) handmatig te wijzigen.
+- **Dynamische simulatie**: Bekijk de evolutie van cellen in real-time.
+- **Gebruiksvriendelijke interface**: Besturing via knoppen en muisklikken.
+
+## Spelregels
+
+Conway's Game of Life volgt vier eenvoudige regels:
+
+1. **Overbevolking**: Een levende cel met meer dan drie levende buren sterft.
+2. **Isolement**: Een levende cel met minder dan twee levende buren sterft.
+3. **Levensvatbaarheid**: Een levende cel met twee of drie levende buren blijft leven.
+4. **Voortplanting**: Een dode cel met precies drie levende buren wordt levend.
 
 Bit Academy deepdive
