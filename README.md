@@ -1,6 +1,6 @@
 # Game-of-Life
 
-Conway's Game of Life is een simulatie van cellulaire automaten, uitgevonden door de wiskundige John Conway in 1970. Het is een nultispeler-spel waarin de evolutie van cellen wordt bepaald door hun omgeving volgens een paar eenvoudige regels. Dit project bevat een interactieve versie van het spel met de volgende functionaliteiten: Clear, Random, Start, Pause, en Restart.
+Conway's Game of Life is een simulatie van cellulaire automaten, uitgevonden door de wiskundige John Conway in 1970. Het is een Multispeler-spel waarin de evolutie van cellen wordt bepaald door hun omgeving volgens een paar eenvoudige regels. Dit project bevat een interactieve versie van het spel met de volgende functionaliteiten: Clear, Random, Start, Pause, en Restart.
 
 ## Inhoudsopgave
 
