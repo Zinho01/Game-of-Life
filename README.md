@@ -13,12 +13,12 @@ Conway's Game of Life is een simulatie van cellulaire automaten, uitgevonden doo
 
 1. Clone deze repository naar je lokale machine:
     ```bash
-    git clone https://github.com/gebruikersnaam/conways-game-of-life.git
+    git clone https://github.com/Zinho01/Game-of-Life
     ```
 
 2. Navigeer naar de projectmap:
     ```bash
-    cd conways-game-of-life
+    cd Game-of-Life
     ```
 
 3. open de html via vscode live sever
