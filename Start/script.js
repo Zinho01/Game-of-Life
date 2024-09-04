@@ -32,3 +32,29 @@ for (let i = 0; i < rows; i++) {
 function clicker() {
     
 }
+
+let intervalId = null;
+let speed = 500;
+var slider = document.getElementById("slider");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+
+function updateSpeed() {
+  const slider = document.getElementById('slider');
+  const sliderValue = slider.value;
+  speed = 1000 - (sliderValue * 10);
+  clearInterval(intervalId);
+  intervalId = setInterval(gameOfLifeStep, speed);
+}
+
+function gameOfLifeStep() {
+  console.log('Game of Life step executed');
+}
+
+document.getElementById('slider').addEventListener('input', updateSpeed);
+
+intervalId = setInterval(gameOfLifeStep, speed);
