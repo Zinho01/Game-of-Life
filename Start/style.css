@@ -2,6 +2,20 @@ body {
     background-color: rgb(3, 87, 41);
 }
 
+#slider-container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#slider-container > label {
+    color: white;
+    font-size: 20px;
+}
+
 h1 {
     text-align: center;
     color: white;
