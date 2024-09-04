@@ -5,12 +5,12 @@ body{
 
 main {
     text-align: center;
-    background-color: #444;
+    background-color: rgb(3, 87, 41);
 }
 
 h1 {
     margin: 0px;
-    color: #00ff08;
+    color: white;
     font-family: 'Courier New', monospace;
     font-size: 2em;
     text-align: center;
@@ -27,11 +27,11 @@ p{
 header {
     padding: 0px;
     margin: 0px;
-    background-color: #587559;
+    background-color: rgb(3, 87, 41);
 }
 
 footer {
-    padding: 0px;
+    padding: 2px;
     margin: 0px;
     background-color: cadetblue;
 }
@@ -39,16 +39,16 @@ footer {
 #gridContainer {
     display: flex;
     justify-content: center;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
 }
 
 table {
     background-color: #C5D6C6;
-    border-spacing: 0;
+    border-spacing: 6px;
 }
 
 td {
-    border: 1px solid #F1F5DA;
+    border: 1px solid #000000;
     border-radius: 3px;
     width: 10px;
     height: 10px;
@@ -61,12 +61,13 @@ span {
 #start,
 #clear,
 #random {
-    padding: .75em;
+    padding: 1vh;
     border-radius: 5px;
     border: none;    
     background: linear-gradient(
         to bottom right,
         #C5DEC6, #587559);
+    margin: 1vh;
 }
 
 td.dead {
@@ -74,6 +75,6 @@ td.dead {
 }
 
 td.live {
-    background-color: #CC4774;
+    background-color: #a80038;
     border-radius: 10px;
 }
