@@ -1,7 +1,7 @@
 const rows = 28;
 let cols = 28;
 
-let playing = false; 
+let playing = false;
 let grid = new Array(rows);
 const nextGrid = new Array(rows);
 
@@ -49,7 +49,7 @@ function createTable() {
 
     for (let i = 0; i < rows; i++) {
         let tr = document.createElement("tr");
-        for (let j = 0; j < cols; j++) { 
+        for (let j = 0; j < cols; j++) {
             let cell = document.createElement("td");
             cell.setAttribute("id", i + "_" + j);
             cell.setAttribute("class", "dead");
@@ -132,7 +132,7 @@ function clearButtonHandler() {
     for (let i = 0; i < cells.length; i++) {
         cells[i].setAttribute("class", "dead");
     }
-    resetGrids();  
+    resetGrids();
 }
 
 function startButtonHandler() {
@@ -219,7 +219,7 @@ let slider = document.getElementById("slider");
 var output = document.getElementById("demo");
 output.innerHTML = slider.value;
 
-slider.oninput = function() {
+slider.oninput = function () {
     output.innerHTML = this.value;
     updateSpeed();
 }
