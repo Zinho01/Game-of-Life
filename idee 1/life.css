@@ -1,11 +1,15 @@
-body{
+body {
     margin: 0px;
     padding: 0px;
+    background-color: green;
 }
 
 main {
     text-align: center;
+<<<<<<< HEAD
     background-color: rgb(3, 87, 41);
+=======
+>>>>>>> main
 }
 
 h1 {
@@ -16,44 +20,53 @@ h1 {
     text-align: center;
 }
 
-p{
-    color: white;
+p {
+    color: #000000;
     font-family: 'Courier New', monospace;
     font-size: 1.5em;
     text-align: center;
     margin: 0px;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+}
+
 header {
     padding: 0px;
     margin: 0px;
-    background-color: rgb(3, 87, 41);
+    background-color: green;
 }
 
 footer {
-    padding: 29px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 0px;
     margin: 0px;
-    background-color: rgb(3, 87, 41);
+    background-color: green;
 }
 
 #gridContainer {
     display: flex;
     justify-content: center;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
     border-collapse: collapse;
 }
 
 table {
-    background-color: cornflowerblue;
-    border-spacing: 1px;
+    background-color:cornflowerblue;
+    border-spacing: 0;
     border-collapse: collapse;
 }
 
 td {
-    border: 1px;
+    border: 1px solid #F1F5DA;
     border-radius: 0px;
-    width: 29px;
-    height: 29px;
+    padding: 0px;
+    width: 30px;
+    height: 30px;
     border-collapse: collapse;
 }
 
@@ -66,11 +79,8 @@ span {
 #random {
     padding: 1vh;
     border-radius: 5px;
-    border: none;    
-    background: linear-gradient(
-        to bottom right,
-        cornflowerblue, #587559);
-    margin: 1vh;
+    border: none;
+    background: #CC4774;
 }
 
 td.dead {
@@ -78,24 +88,6 @@ td.dead {
 }
 
 td.live {
-    background-color: red;
+    background-color: #CC4774;
     border-radius: 0px;
-}
-
-a {
-    text-decoration: none;
-    color: white;
-}
-
-#slider-container
-{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-#slider-container > label {
-    color: white;
-    font-size: 20px;
 }
