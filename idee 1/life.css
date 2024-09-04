@@ -6,10 +6,6 @@ body {
 
 main {
     text-align: center;
-<<<<<<< HEAD
-    background-color: rgb(3, 87, 41);
-=======
->>>>>>> main
 }
 
 h1 {
@@ -90,4 +86,9 @@ td.dead {
 td.live {
     background-color: #CC4774;
     border-radius: 0px;
+}
+
+img {
+    width: 20px;
+    height: 20px;
 }
