@@ -226,7 +226,7 @@ slider.oninput = function() {
 
 function updateSpeed() {
     const sliderValue = slider.value;
-    reproductionTime = 1000 - (sliderValue * 10);
+    reproductionTime = 950 - (sliderValue * 10);
     clearTimeout(timer);
     if (playing) {
         play();
