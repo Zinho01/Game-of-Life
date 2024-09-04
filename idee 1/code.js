@@ -1,12 +1,12 @@
-const rows = 30;
-let cols = 30;
+const rows = 28;
+let cols = 28;
 
 let playing = false; 
 let grid = new Array(rows);
 const nextGrid = new Array(rows);
 
 let timer;
-const reproductionTime = 100;
+let reproductionTime = 50;
 
 function initializeGrids() {
     for (let i = 0; i < rows; i++) {
@@ -132,7 +132,7 @@ function clearButtonHandler() {
     for (let i = 0; i < cells.length; i++) {
         cells[i].setAttribute("class", "dead");
     }
-    resetGrids();  // Corrected to ensure the grid is reset
+    resetGrids();  
 }
 
 function startButtonHandler() {
@@ -212,6 +212,25 @@ function countNeighbors(row, col) {
         if (grid[row + 1][col + 1] == 1) count++;
     }
     return count;
+}
+
+let intervalId = null;
+let slider = document.getElementById("slider");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+    output.innerHTML = this.value;
+    updateSpeed();
+}
+
+function updateSpeed() {
+    const sliderValue = slider.value;
+    reproductionTime = 1000 - (sliderValue * 10);
+    clearTimeout(timer);
+    if (playing) {
+        play();
+    }
 }
 
 window.onload = initialize;

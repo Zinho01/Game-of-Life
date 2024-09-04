@@ -25,13 +25,13 @@ p{
 }
 
 header {
-    padding: 8 px;
+    padding: 0px;
     margin: 0px;
     background-color: rgb(3, 87, 41);
 }
 
 footer {
-    padding: 10px;
+    padding: 29px;
     margin: 0px;
     background-color: rgb(3, 87, 41);
 }
@@ -52,8 +52,8 @@ table {
 td {
     border: 1px;
     border-radius: 0px;
-    width: 30px;
-    height: 30px;
+    width: 29px;
+    height: 29px;
     border-collapse: collapse;
 }
 
@@ -85,4 +85,17 @@ td.live {
 a {
     text-decoration: none;
     color: white;
+}
+
+#slider-container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#slider-container > label {
+    color: white;
+    font-size: 20px;
 }
