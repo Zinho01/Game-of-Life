@@ -234,7 +234,7 @@ function updateSpeed() {
     }
 }
 
-slider.addEventListener('wheel', function(event) {
+slider.addEventListener('wheel', function (event) {
     event.preventDefault();
     let newValue = parseInt(slider.value) - Math.sign(event.deltaY);
     newValue = Math.min(Math.max(newValue, slider.min), slider.max); // Limiet tussen min en max
@@ -242,5 +242,56 @@ slider.addEventListener('wheel', function(event) {
     output.innerHTML = slider.value;
     updateSpeed();
 });
+
+function updateSliderColor() {
+    const value = slider.value;
+    // Bereken de kleurovergang tussen groen (0, 255, 0) en rood (255, 0, 0)
+    const red = Math.floor((value - 1) * 255 / 99);
+    const green = Math.floor(255 - (value - 1) * 255 / 99);
+    const color = `rgb(${red}, ${green}, 0)`;
+
+    // Pas de achtergrondkleur van de slider aan
+    slider.style.background = `linear-gradient(to right, ${color} ${value}%, #ddd ${value}%)`;
+}
+
+// Pas de kleur aan bij het bewegen van de slider
+slider.oninput = function () {
+    output.innerHTML = this.value;
+    updateSpeed();
+    updateSliderColor();
+}
+
+// Kleur bij het laden van de pagina instellen
+window.onload = function () {
+    initialize();
+    updateSliderColor();
+};
+
+// De Konami Code volgorde
+const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a', 'Enter'];
+let konamiIndex = 0;
+
+// Functie om de code te checken bij toetsaanslagen
+document.addEventListener('keydown', function(event) {
+    // Check of de huidige toetsaanslag overeenkomt met de juiste toets in de Konami Code
+    if (event.key === konamiCode[konamiIndex]) {
+        konamiIndex++;
+    } else {
+        // Als het niet overeenkomt, reset de index
+        konamiIndex = 0;
+    }
+
+    // Als de volledige code correct is ingevoerd
+    if (konamiIndex === konamiCode.length) {
+        activateKonamiCode();
+        konamiIndex = 0; // Reset de index voor een eventuele volgende keer
+    }
+});
+
+// Functie die wordt geactiveerd bij het invoeren van de Konami Code
+function activateKonamiCode() {
+    const url = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+    window.location.href = url;
+}
 
 window.onload = initialize;
