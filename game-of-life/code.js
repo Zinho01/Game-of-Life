@@ -1,7 +1,7 @@
 const rows = 28;
 let cols = 28;
 
-let playing = false; 
+let playing = false;
 let grid = new Array(rows);
 const nextGrid = new Array(rows);
 
@@ -49,7 +49,7 @@ function createTable() {
 
     for (let i = 0; i < rows; i++) {
         let tr = document.createElement("tr");
-        for (let j = 0; j < cols; j++) { 
+        for (let j = 0; j < cols; j++) {
             let cell = document.createElement("td");
             cell.setAttribute("id", i + "_" + j);
             cell.setAttribute("class", "dead");
@@ -100,28 +100,29 @@ function setupControlButtons() {
     randomButton.onclick = randomButtonHandler;
 }
 
-function randomButtonHandler() {
-    if (playing) return;
-    clearButtonHandler();
-    for (let i = 0; i < rows; i++) {
-        for (let j = 0; j < cols; j++) {
-            let isLive = Math.round(Math.random());
-            if (isLive == 1) {
-                let cell = document.getElementById(i + "_" + j);
-                cell.setAttribute("class", "live");
-                grid[i][j] = 1;
-            }
-        }
+function startButtonHandler() {
+    if (playing) {
+        playing = false;
+        this.id = "start";
+        this.innerHTML = "Start";
+        clearTimeout(timer);
+    } else {
+        playing = true;
+        this.id = "pause";
+        this.innerHTML = "Pause";
+        play();
     }
 }
 
-function clearButtonHandler() {
-    console.log("Clear the game: stop playing, clear the grid");
 
-    playing = false;
-    const startButton = document.getElementById('start');
-    startButton.innerHTML = "Start";
-    clearTimeout(timer);
+function clearButtonHandler() {
+    if (playing) {
+        playing = false;
+        const startButton = document.getElementById('pause');
+        startButton.id = "start";
+        startButton.innerHTML = "Start";
+        clearTimeout(timer);
+    }
 
     const cellsList = document.getElementsByClassName("live");
     const cells = [];
@@ -132,20 +133,20 @@ function clearButtonHandler() {
     for (let i = 0; i < cells.length; i++) {
         cells[i].setAttribute("class", "dead");
     }
-    resetGrids();  
+    resetGrids();
 }
 
-function startButtonHandler() {
-    if (playing) {
-        console.log("Pause the game");
-        playing = false;
-        this.innerHTML = "Continue";
-        clearTimeout(timer);
-    } else {
-        console.log("Continue the game");
-        playing = true;
-        this.innerHTML = "Pause";
-        play();
+function randomButtonHandler() {
+    clearButtonHandler();
+    for (let i = 0; i < rows; i++) {
+        for (let j = 0; j < cols; j++) {
+            let isLive = Math.round(Math.random());
+            if (isLive == 1) {
+                let cell = document.getElementById(i + "_" + j);
+                cell.setAttribute("class", "live");
+                grid[i][j] = 1;
+            }
+        }
     }
 }
 
@@ -219,14 +220,14 @@ let slider = document.getElementById("slider");
 var output = document.getElementById("demo");
 output.innerHTML = slider.value;
 
-slider.oninput = function() {
+slider.oninput = function () {
     output.innerHTML = this.value;
     updateSpeed();
 }
 
 function updateSpeed() {
     const sliderValue = slider.value;
-    reproductionTime = 1000 * (1 - sliderValue / 100);
+    reproductionTime = 100 - slider.value;
     clearTimeout(timer);
     if (playing) {
         play();
