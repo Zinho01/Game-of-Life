@@ -52,7 +52,7 @@ footer {
 }
 
 table {
-    background-color:cornflowerblue;
+    background-color: cornflowerblue;
     border-spacing: 0;
     border-collapse: collapse;
 }
@@ -70,10 +70,17 @@ span {
     color: #222;
 }
 
+.buttonsContainer {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
 #start,
 #clear,
 #random {
-    padding: 1vh;
+    padding: 10px;
+    margin: 5px;
     border-radius: 5px;
     border: none;
     background: #CC4774;
@@ -86,4 +93,36 @@ td.dead {
 td.live {
     background-color: #CC4774;
     border-radius: 0px;
+}
+
+#start {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+    background: #28a745; /* Groen */
+}
+
+#pause {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+    background: #ffc107; /* Geel */
+}
+
+#clear {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+    background: #007bff; /* Blauw */
+}
+
+#random {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+    background: #6f42c1; /* Paars */
 }
