@@ -302,10 +302,37 @@ function initialize() {
     initializeGrids();
     resetGrids();
     setupControlButtons();
-    setupDragDrawing(); 
+    setupClickHandler(); 
+    setupDragHandler(); 
 }
 
-function setupDragDrawing() {
+
+function setupClickHandler() {
+    const gridContainer = document.getElementById('gridContainer');
+    gridContainer.addEventListener('click', clickCell);  
+}
+
+function clickCell(e) {
+    const cell = e.target;
+    if (cell.tagName === 'TD') {
+        const classes = cell.getAttribute("class");
+        const rowcol = cell.id.split("_");
+        const row = rowcol[0];
+        const col = rowcol[1];
+
+
+        if (classes.indexOf("live") > -1) {
+            cell.setAttribute("class", "dead");
+            grid[row][col] = 0;
+        } else {
+            cell.setAttribute("class", "live");
+            grid[row][col] = 1;
+        }
+    }
+}
+
+
+function setupDragHandler() {
     const gridContainer = document.getElementById('gridContainer');
     gridContainer.addEventListener('mousedown', startDrawing);
     gridContainer.addEventListener('mouseup', stopDrawing);
@@ -319,13 +346,8 @@ function startDrawing(e) {
     if (cell.tagName === 'TD') {
         const classes = cell.getAttribute("class");
 
-        
-        if (classes.indexOf("live") > -1) {
-            currentDrawState = 0;
-        } else {
-            currentDrawState = 1; 
-        }
-
+       
+        currentDrawState = classes.indexOf("live") > -1 ? 0 : 1;
         toggleCellState(cell); 
     }
 }
@@ -349,7 +371,6 @@ function toggleCellState(cell) {
     const row = rowcol[0];
     const col = rowcol[1];
 
-    
     if (currentDrawState === 1) {
         cell.setAttribute("class", "live");
         grid[row][col] = 1;
