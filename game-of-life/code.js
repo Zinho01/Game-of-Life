@@ -294,4 +294,69 @@ function activateKonamiCode() {
     window.location.href = url;
 }
 
+let isDrawing = false; 
+let currentDrawState = null; 
+
+function initialize() {
+    createTable();
+    initializeGrids();
+    resetGrids();
+    setupControlButtons();
+    setupDragDrawing(); 
+}
+
+function setupDragDrawing() {
+    const gridContainer = document.getElementById('gridContainer');
+    gridContainer.addEventListener('mousedown', startDrawing);
+    gridContainer.addEventListener('mouseup', stopDrawing);
+    gridContainer.addEventListener('mousemove', dragOverCell);
+}
+
+function startDrawing(e) {
+    isDrawing = true;
+
+    const cell = e.target;
+    if (cell.tagName === 'TD') {
+        const classes = cell.getAttribute("class");
+
+        
+        if (classes.indexOf("live") > -1) {
+            currentDrawState = 0;
+        } else {
+            currentDrawState = 1; 
+        }
+
+        toggleCellState(cell); 
+    }
+}
+
+function stopDrawing() {
+    isDrawing = false;
+    currentDrawState = null;
+}
+
+function dragOverCell(e) {
+    if (isDrawing) {
+        const cell = e.target;
+        if (cell.tagName === 'TD') {
+            toggleCellState(cell); 
+        }
+    }
+}
+
+function toggleCellState(cell) {
+    const rowcol = cell.id.split("_");
+    const row = rowcol[0];
+    const col = rowcol[1];
+
+    
+    if (currentDrawState === 1) {
+        cell.setAttribute("class", "live");
+        grid[row][col] = 1;
+    } else {
+        cell.setAttribute("class", "dead");
+        grid[row][col] = 0;
+    }
+}
+
 window.onload = initialize;
