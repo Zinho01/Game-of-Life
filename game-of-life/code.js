@@ -255,11 +255,17 @@ function setupDragDrawing() {
 function startDrawing(e) {
     isDrawing = true;
 
-    
     const cell = e.target;
     if (cell.tagName === 'TD') {
         const classes = cell.getAttribute("class");
-        currentDrawState = classes.indexOf("live") > -1 ? 0 : 1; 
+
+        
+        if (classes.indexOf("live") > -1) {
+            currentDrawState = 0;
+        } else {
+            currentDrawState = 1; 
+        }
+
         toggleCellState(cell); 
     }
 }
@@ -283,6 +289,7 @@ function toggleCellState(cell) {
     const row = rowcol[0];
     const col = rowcol[1];
 
+    
     if (currentDrawState === 1) {
         cell.setAttribute("class", "live");
         grid[row][col] = 1;
