@@ -33,7 +33,7 @@ function clicker() {
     
 }
 
-let intervalId = null;
+let intervalId = 100;
 let speed = 500;
 var slider = document.getElementById("slider");
 var output = document.getElementById("demo");

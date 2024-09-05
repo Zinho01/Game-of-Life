@@ -47,7 +47,7 @@ footer {
 #gridContainer {
     display: flex;
     justify-content: center;
-    padding-bottom: 10px;
+    padding-bottom: 0px;
     border-collapse: collapse;
 }
 
@@ -61,8 +61,8 @@ td {
     border: 1px solid #F1F5DA;
     border-radius: 0px;
     padding: 0px;
-    width: 30px;
-    height: 30px;
+    width: 29px;
+    height: 29px;
     border-collapse: collapse;
 }
 
@@ -73,7 +73,7 @@ span {
 #start,
 #clear,
 #random {
-    padding: 1vh;
+    padding: 10px;
     border-radius: 5px;
     border: none;
     background: #CC4774;
@@ -91,4 +91,8 @@ td.live {
 img {
     width: 20px;
     height: 20px;
+}
+
+#slider-container {
+    margin: 5px;
 }
