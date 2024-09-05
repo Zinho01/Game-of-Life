@@ -234,4 +234,13 @@ function updateSpeed() {
     }
 }
 
+slider.addEventListener('wheel', function(event) {
+    event.preventDefault();
+    let newValue = parseInt(slider.value) - Math.sign(event.deltaY);
+    newValue = Math.min(Math.max(newValue, slider.min), slider.max); // Limiet tussen min en max
+    slider.value = newValue;
+    output.innerHTML = slider.value;
+    updateSpeed();
+});
+
 window.onload = initialize;
